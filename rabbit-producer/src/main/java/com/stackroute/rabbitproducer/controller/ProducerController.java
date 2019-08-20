@@ -15,7 +15,7 @@ public class ProducerController {
 
     public ProducerController() {
     }
-
+//Adding dependencies of RabbitMqSender
     @Autowired
     public ProducerController(RabbitMqSender rabbitMQSender) {
         this.rabbitMQSender = rabbitMQSender;

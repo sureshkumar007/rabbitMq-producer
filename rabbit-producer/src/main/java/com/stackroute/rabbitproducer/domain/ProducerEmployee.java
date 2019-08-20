@@ -19,4 +19,6 @@ public class ProducerEmployee
 {
     private String empName;
     private String empId;
+
+    //**Getter and setter and constructions will be created by lombok
 }
