@@ -12,7 +12,7 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+//**The configuration annotation tells that the class having bean
 @Configuration
 public class RabbitMqConfig
 {
@@ -24,24 +24,27 @@ public class RabbitMqConfig
 
     @Value("${jsa.rabbitmq.routingkey}")
      String routingkey;
-
+//creating object for queue
     @Bean
     Queue queue() {
         return new Queue(queueName, true);
     }
 
     @Bean
-    DirectExchange exchange() {
+    DirectExchange exchange()
+    {
         return new DirectExchange(exchange);
     }
 
     @Bean
-    Binding binding(Queue queue, DirectExchange exchange) {
+    Binding binding(Queue queue, DirectExchange exchange)
+    {
         return BindingBuilder.bind(queue).to(exchange).with(routingkey);
     }
 
     @Bean
-    public MessageConverter jsonMessageConverter() {
+    public MessageConverter jsonMessageConverter()
+    {
         return new Jackson2JsonMessageConverter();
     }
     @Bean
