@@ -1,0 +1,1 @@
+RabbitMq task should be run by docker image and the messages should exchange from consumer and producer
